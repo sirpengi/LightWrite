@@ -1,6 +1,12 @@
-MEDIA_ROOT = '/home/tuttle/Projects/LightWrite/static'
-SITE_ROOT = '/home/tuttle/Projects/LightWrite/'
-STATICFILES_DIRS = (
-  '/home/tuttle/Projects/LightWrite/static/', 
-  )
+from os.path import dirname, abspath, join
 
+BASE_PATH = dirname(__file__)
+ROOT_PATH = abspath(dirname(join(BASE_PATH, '../')))
+
+MEDIA_ROOT = join(ROOT_PATH, 'static')
+SITE_ROOT = ROOT_PATH
+STATICFILES_DIRS = (
+  join(ROOT_PATH, 'static'),
+)
+
+REDIR = '' #URL used for redirection? who knows?
